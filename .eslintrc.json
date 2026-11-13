@@ -1,0 +1,84 @@
+{
+  "root": true,
+  "env": {
+    "node": true,
+    "browser": true,
+    "es2020": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "airbnb",
+    "plugin:node/recommended",
+    "prettier"
+  ],
+  "plugins": ["react", "react-hooks", "prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-underscore-dangle": "off",
+    "no-unused-vars": "warn",
+    "no-console": "off",
+    "react/jsx-no-target-blank": "off",
+    "react-refresh/only-export-components": [
+      "warn",
+      { "allowConstantExport": true }
+    ],
+    "react/prop-types": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "always",
+        "json": "always"
+      }
+    ],
+    "no-process-exit": "off",
+    "object-shorthand": "off",
+    "class-methods-use-this": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    {
+      "files": ["backend/**/*.js"],
+      "env": {
+        "node": true
+      },
+      "rules": {
+        "no-process-exit": "off",
+        "object-shorthand": "off",
+        "class-methods-use-this": "off"
+      }
+    },
+    {
+      "files": ["frontend/**/*.{js,jsx}"],
+      "env": {
+        "browser": true
+      },
+      "plugins": ["react", "react-hooks", "react-refresh"],
+      "rules": {
+        "react/jsx-no-target-blank": "off",
+        "react-refresh/only-export-components": [
+          "warn",
+          { "allowConstantExport": true }
+        ]
+      },
+      "settings": {
+        "react": {
+          "version": "18.3"
+        }
+      }
+    }
+  ]
+}
